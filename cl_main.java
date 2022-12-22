@@ -40,9 +40,15 @@ public class cl_main {
                 if (tmp_reg.length() % 2 == 1) {
                     binaryStr += unit;
                 }
-                if (lw_unary.length() == 1) {
-                    lw_unary = init;
-                    binaryStr += unit;
+                if (lw_unary.length() <= 2) {
+                    if(lw_unary.length() == 2) {
+                        lw_unary = unit;
+                        binaryStr += inf;
+                    }
+                    if(lw_unary.length() == 1) {
+                        lw_unary = init;
+                        binaryStr += unit;
+                    }
                 }
                 tmp_reg = lw_unary;
             }
@@ -67,7 +73,7 @@ public class cl_main {
     }
     public static void main(String args[]) {
         //System.out.println(meth_unaryTobinStr(meth_pascPow2(exp)));
-        System.out.println(meth_unaryTobinStr("11111111111111111"));
+        System.out.println(meth_unaryTobinStr(meth_pascPow2("111111")));
         meth_delReg();
     }
 }
